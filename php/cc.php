@@ -1,4 +1,19 @@
 <?php
+
+//http://us3.php.net/manual/en/function.array-merge-recursive.php#92195
+function array_merge_recursive_distinct ( array &$array1, array &$array2 ){
+	$merged = $array1;
+	foreach ( $array2 as $key => &$value ){
+		if ( is_array ( $value ) && isset ( $merged [$key] ) && is_array ( $merged [$key] ) ){
+			$merged [$key] = array_merge_recursive_distinct ( $merged [$key], $value );
+		}else{
+			$merged [$key] = $value;
+		}
+	}
+
+	return $merged;
+}
+
 if(isset($_GET["ccin"])){
 	// PREVENT CACHING FIRST BEFORE ANYTHING ELSE!
 	header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
@@ -36,7 +51,7 @@ class CC{
 	public static function receive($id, $name, $data){
 		$new = json_decode($data,true);
 		$cur = CC::open($id);
-		$out = array_merge($cur, $new);
+		$out = array_merge_recursive_distinct($cur, $new);
 		$out["name"] = $name;
 		$out["last2"] = time();
 		CC::save($id, $out);
@@ -68,7 +83,7 @@ if(isset($_GET["ccin"])){
 				echo "error";
 			}
 		}elseif(isset($_GET["establish"])){//cc first connect
-			CC::receive($id, $name, '{"dummy":1}');
+			CC::receive($id, $name, '{"connection-created":'.time().'}');
 			echo "ok";
 		}
 	}else{
