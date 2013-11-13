@@ -12,17 +12,18 @@ Installation
 First of all, download the remotecc script
 You can chose how to do it:
 	1. Download this whole package and move the script to the computer save folder
-	2. Use https://raw.github.com/KamilKZ/remotecc/master/lua/remotecc and copy it in
-	3. Use https://github.com/seriallos/computercraft and the command "github get KamilKZ/remotecc/master/lua/remotecc remotecc"
+	2. Use https://raw.github.com/KamilKZ/remotecc/master/remotecc.lua and copy it in
+	3. Use https://github.com/seriallos/computercraft and the command "github get KamilKZ/remotecc/master/remotecc.lua remotecc"
 
 Then you need to upload "cc.php", to a webhost that supports PHP, duh.
+A link to the file, if you want it: https://raw.github.com/KamilKZ/remotecc/master/remotecc.php
 
 "http" must be enabled in ComputerCraft
 
 Usage/API
 ---------
 
-You should look at the included examples too, they're in the php and lua folders respectively
+You should look at the included examples too.
 
 Lua:
 
@@ -43,7 +44,7 @@ Lua:
 		
 PHP:
 
-	`include('cc.php');`
+	`include('remotecc.php');`
 		Includes the required file
 	
 	From then on, you can use these:
