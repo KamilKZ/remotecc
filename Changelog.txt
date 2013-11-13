@@ -1,0 +1,7 @@
+6/12/13 1.0
+* Initial Version
+
+29/10/13 1.1
+* The only thing changed code-wise was fixing r.close() in remotecc (Conection:request()) to actually close the connection, this most likely clogged up the net and caused slowness [and not the php caching]
+* Added documentation for PHP
+* Better commeneted example.lua
