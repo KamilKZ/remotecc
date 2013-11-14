@@ -12,11 +12,10 @@ Installation
 First of all, download the remotecc script
 You can chose how to do it:
 1. Download this whole package and move the script to the computer save folder
-2. Use https://raw.github.com/KamilKZ/remotecc/master/lua/remotecc.lua and copy it in
-3. Use https://github.com/seriallos/computercraft and the command "github get KamilKZ/remotecc/master/lua/remotecc.lua remotecc"
+2. [Copy it in](https://raw.github.com/KamilKZ/remotecc/master/remotecc.lua)
+3. Use [Seriallos's github script](https://github.com/seriallos/computercraft) and the command "github get KamilKZ/remotecc/master/remotecc.lua remotecc"
 
-Then you need to upload "cc.php", to a webhost that supports PHP, duh.
-A link to the file, if you want it: https://raw.github.com/KamilKZ/remotecc/master/remotecc.php
+Then you need to upload [remotecc.php](https://github.com/KamilKZ/remotecc/blob/master/remotecc.php), to a webhost that supports PHP, duh.
 
 "http" must be enabled in ComputerCraft
 
